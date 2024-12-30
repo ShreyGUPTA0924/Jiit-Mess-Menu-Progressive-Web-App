@@ -1,0 +1,627 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: 60px; /* To avoid overlap with footer */
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: #000000; 
+    color: white;
+    font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.logo:hover {
+    transform: scale(1.2); /* Enlarge the image to 150% of its original size */
+}
+
+/* Heading Styling */
+.heading {
+    flex: 1; /* Takes up the remaining space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navigation Section Styling */
+.nav-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Adds spacing between "About" and "More" */
+}
+
+/* Shared Navigation Item Styling */
+.nav-item {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    touch-action: manipulation;
+}
+
+.nav-item:hover {
+    color: #35f006;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+    }
+
+    .logo img {
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    .heading {
+        font-size: 1.2rem;
+    }
+
+    .nav-section {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .nav-item {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.5rem;
+    }
+
+    .logo img {
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    .heading {
+        font-size: 1rem;
+    }
+
+    .nav-section {
+        gap: 0.5rem;
+    }
+
+    .nav-item {
+        font-size: 0.9rem;
+    }
+}
+
+/* Page Layout */
+#page {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: inherit;
+    overflow: auto;
+}
+
+/* Day Picker */
+.day-picker {
+    display: flex;
+    justify-content: space-around; 
+    padding: 0.5rem;
+    background-color: #000000; 
+    color: #ffffff;
+    border-top: 5px solid rgb(215, 20, 20);
+    border-bottom: 5px solid rgb(215, 20, 20); 
+}
+
+.day-choice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 13px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    touch-action: manipulation;
+}
+
+.day-choice.day-choice--selected {
+    background-color: #444542; 
+    color: rgb(163, 248, 51);
+    font-weight: bold;
+}
+
+.day-choice:hover {
+    background-color: #2b2c2b; /* Light gray on hover */
+}
+
+.day-text {
+    padding-top: 1px;
+    border-radius: 5px;
+    height: 1.75em;
+    width: 1.75em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    font-size: x-large;
+}
+
+/* BANNERS */
+
+.pwa-install-banner {
+    position: relative; /* Updated to fit in flow */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: gold;
+    margin-top: 1rem;
+    z-index: 1;
+}
+
+.banner {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    color: gold;
+}
+
+.banner__content {
+    position: relative;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.banner__content > img {
+    position: absolute;
+    height: 20px;
+    opacity: 0.5;
+    transform-origin: center;
+}
+
+.banner__content > hr {
+    width: 75%;
+    background-color: currentColor;
+    opacity: 0.25;
+    height: 2px;
+    border: 0;
+}
+
+.banner__content > div {
+    font-size: 0.75em;
+}
+
+.corner--top-right {
+    top: 0;
+    right: 0;
+}
+
+.corner--top-left {
+    transform: rotate(-90deg);
+    top: 0;
+    left: 0;
+}
+
+.corner--bottom-right {
+    transform: rotate(+90deg);
+    bottom: 0;
+    right: 0;
+}
+
+.corner--bottom-left {
+    transform: rotate(180deg);
+    bottom: 0;
+    left: 0;
+}
+
+/* Root Variables for Neon Colors */
+:root {
+    --neon-orange: #FF9E00; /* Neon Orange */
+    --electric-yellow: #FFFF33; /* Electric Yellow */
+    --electric-green: #00FF00; /* Electric Green */
+    --cyan-blue: #00F5FF; /* Electric Purple */
+
+    --background-color: #111111; /* Black background */
+    --text-color-light: #ffffff; /* White text */
+    --border-radius: 0.5em;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Menu Container */
+#actual-menu {
+    display: flex;
+    flex-wrap: wrap; /* Adjust items on smaller screens */
+    justify-content: center;
+    gap: 1.5em;
+    padding: 1em;
+    background-color: var(--background-color);
+}
+
+/* Individual Meal Category */
+.menu-category {
+    flex: 1 1 calc(100% - 2em); /* Full width on small screens */
+    max-width: 400px; /* Limit max width */
+    text-align: center;
+    min-height: 300px; /* Fixed height to prevent collapse */
+}
+
+@media (min-width: 720px) {
+    .menu-category {
+        flex: 1 1 calc(50% - 2em); /* 2 items per row on medium screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .menu-category {
+        flex: 1 1 calc(33.33% - 2em); /* 3 items per row on large screens */
+    }
+}
+
+/* Category Inner Container */
+.menu-category-inner {
+    background-color: rgb(22, 20, 20);
+    border: 2px solid var(--accent);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px var(--accent); /* Neon glow */
+    padding: 1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: loading-glow 0.8s infinite alternate; /* Faster glow/dim timing */
+}
+
+.menu-category-inner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--accent); /* Glow increases on hover */
+}
+
+@keyframes loading-glow {
+    from {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
+
+/* Header Styling */
+.menu-category__header {
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5em;
+    text-shadow: 0 0 10px var(--accent); /* Neon text glow */
+}
+
+.meal-timing {
+    font-size: 0.9em;
+    font-style: italic;
+    opacity: 0.8;
+    margin-bottom: 0.5em;
+    color: var(--accent);
+}
+
+/* Menu Items */
+.menu__item {
+    font-size: 1.1em;
+    color: var(--accent);
+    margin: 0.25em 0;
+    text-shadow: 0 0 5px var(--accent); /* Neon text effect */
+    transition: color 0.3s ease;
+}
+
+.menu__item:hover {
+    color: #ffffff; /* Highlight on hover */
+    text-shadow: 0 0 10px var(--accent);
+}
+
+/* Color Themes for Each Meal */
+#B .menu-category-inner {
+    --accent: var(--cyan-blue); /* Updated to Electric Purple */
+}
+
+#L .menu-category-inner {
+    --accent: var(--electric-yellow);
+}
+
+#D .menu-category-inner {
+    --accent: var(--electric-green);
+}
+
+/* Loading Animation */
+.menu__item--loading {
+    background-color: var(--accent);
+    color: transparent;
+    margin: 0.25em 0;
+    border-radius: var(--border-radius);
+    height: 1.5em;
+    animation: loading 0.4s ease infinite alternate; /* Faster text loading animation */
+}
+
+@keyframes loading {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 0.7;
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100; /* Above other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scrolling if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 80%; /* Limit size */
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+#caption {
+    text-align: center;
+    color: #ccc;
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ff0000; /* Highlight on hover */
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.heading h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 5px #e01111, 0 0 10px #e01111, 0 0 15px #e01111, 0 0 20px #e01111, 0 0 25px #e01111, 0 0 30px #e01111, 0 0 35px #e01111;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #e01111, 0 0 10px #e01111, 0 0 15px #e01111, 0 0 20px #e01111, 0 0 25px #e01111, 0 0 30px #e01111, 0 0 35px #e01111;
+    }
+    50% {
+        text-shadow: 0 0 10px #e01111, 0 0 20px #e01111, 0 0 30px #e01111, 0 0 40px #e01111, 0 0 50px #e01111, 0 0 60px #e01111, 0 0 70px #e01111;
+    }
+    100% {
+        text-shadow: 0 0 15px #e01111, 0 0 25px #e01111, 0 0 35px #e01111, 0 0 45px #e01111, 0 0 55px #e01111, 0 0 65px #e01111, 0 0 75px #e01111;
+    }
+}
+
+/* footer css */
+.footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer a:hover {
+    color: #00ff00; /* Neon green color when hovered */
+    text-shadow: 
+        0 0 5px #00ff00, 
+        0 0 10px #00ff00, 
+        0 0 15px #00ff00, 
+        0 0 20px #00ff00;
+}
+
+.footer .neon-glow {
+    color: #ff00ff; /* Neon pink color */
+    text-shadow: 
+        0 0 5px #ff00ff, 
+        0 0 10px #ff00ff, 
+        0 0 15px #ff00ff, 
+        0 0 20px #ff00ff;
+    font-size: 1.5em;
+}
+
+/* Navigation section styles */
+.nav-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Glow effect for the ABOUT link */
+.nav-item a:hover {
+    color: #ff6600; /* Electric bright orange color */
+    text-shadow: 
+        0 0 5px #ff6600, 
+        0 0 10px #ff6600, 
+        0 0 15px #ff6600, 
+        0 0 20px #ff6600;
+         
+        
+}
+
+/* Skeleton Loading Effect */
+/* Breakfast Loading */
+#B .menu__item--loading {
+    background: linear-gradient(90deg, #00F5FF 25%, #00F5FF 50%, #00F5FF 75%); /* Cyan for Breakfast */
+    background-size: 200% 100%;
+    animation: loading-shimmer 0.25s infinite linear, neon-pulse 1s ease-in-out forwards;
+    height: 40px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Lunch Loading */
+#L .menu__item--loading {
+    background: linear-gradient(90deg, #FFEB3B 25%, #FFEB3B 50%, #FFEB3B 75%); /* Yellow for Lunch */
+    background-size: 200% 100%;
+    animation: loading-shimmer 0.25s infinite linear, neon-pulse 1s ease-in-out forwards;
+    height: 40px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Dinner Loading */
+#D .menu__item--loading {
+    background: linear-gradient(90deg, #00FF00 25%, #00FF00 50%, #00FF00 75%); /* Electric Green for Dinner */
+    background-size: 200% 100%;
+    animation: loading-shimmer 0.25s infinite linear, neon-pulse 1s ease-in-out forwards;
+    height: 40px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Shimmer animation */
+@keyframes loading-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Neon Pulse Animation (Used for all categories) */
+@keyframes neon-pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 10px #00F5FF, 0 0 20px #00F5FF;
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #FFEB3B, 0 0 30px #FFEB3B;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+        box-shadow: 0 0 30px #00FF00, 0 0 40px #00FF00;
+    }
+}
+
+/* Ensure the layout is PWA-friendly for all screen sizes */
+@media (max-width: 768px) {
+    .menu__item--loading {
+        height: 30px; /* Adjust for smaller screens */
+        margin: 4px 0; /* Reduce margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu__item--loading {
+        height: 25px; /* Even smaller height for mobile screens */
+        margin: 3px 0; /* Further reduce margin */
+    }
+}

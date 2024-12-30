@@ -1,0 +1,49 @@
+{
+    "short_name": "Mess Menu",
+    "name": "JIIT Mess Menu",
+    "description": "An interactive menu app for JIIT 62 - Never squint at a photo of the mess menu ever again.",
+    "start_url": "/index.html",
+    "scope": "/",
+    "background_color": "#121212",
+    "display": "standalone",
+    "theme_color": "#121112",
+    "orientation": "portrait-primary",
+    "categories": ["utilities", "education", "food"],
+    "lang": "en-US",
+    "icons": [
+        {
+            "src": "./images/MessMenublackfrontlogo.png",
+            "type": "image/png",
+            "sizes": "1024x1024",
+            "purpose": "any"
+        },
+        {
+            "src": "./images/favicon.png",
+            "type": "image/png",
+            "sizes": "256x256",
+            "purpose": "maskable"
+        },
+        {
+            "src": "./images/MessMenublackfrontlogo.png",
+            "type": "image/png",
+            "sizes": "1024x1024",
+            "purpose": "any"
+        }
+    ],
+    "screenshots": [
+		{
+			"src": "/images/MessMenu_narrow_SC.png",
+			"type": "image/png",
+			"sizes": "1042x1521",
+			"form_factor": "narrow",
+			"label": "Narrow Device (1)"
+		},
+		{
+			"src": "/images/MessMenu_wide_SC.png",
+			"type": "image/png",
+			"sizes": "2874x1619",
+			"form_factor": "wide",
+			"label": "Wide Device"
+		}
+	]
+}

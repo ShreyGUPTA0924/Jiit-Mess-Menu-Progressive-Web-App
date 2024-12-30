@@ -1,0 +1,84 @@
+/* Set the entire background of the page to black */
+body {
+    background-color: #000; /* Black background for the entire page */
+    color: #fff; /* White text for readability */
+    font-family: Arial, sans-serif; /* Font style */
+}
+
+/* Header section layout remains the same but now says "HOME" instead of "ABOUT" */
+.header {
+    background-color: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.header .logo img {
+    width: 100px;
+}
+
+.header .heading h1 {
+    font-size: 2em;
+    margin: 0;
+    text-align: center;
+}
+
+.header .nav-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.header .nav-item a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Change link from "ABOUT" to "HOME" and apply hover effect */
+.nav-item a:hover {
+    color: #ff6600;
+    text-shadow: 
+        0 0 5px #ff6600, 
+        0 0 10px #ff6600, 
+        0 0 15px #ff6600, 
+        0 0 20px #ff6600;
+}
+
+/* Main content section for About Me */
+.about-content {
+    padding: 2em;
+    text-align: center;
+}
+
+/* Footer section (same as index) */
+.footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect for SHREY GUPTA link in footer */
+.footer a:hover {
+    color: #ff6600;
+    text-shadow: 
+        0 0 5px #ff6600, 
+        0 0 10px #ff6600, 
+        0 0 15px #ff6600, 
+        0 0 20px #ff6600;
+}

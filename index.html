@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MESS MENU</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script> 
+    <link rel="manifest" href="manifest.json"> 
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo"><img src="/images/jiit new logo.png" alt="JIIT LOGO"></div>
+        <div class="heading"><h1>MESS MENU</h1></div>
+        <div class="nav-section">
+            <div class="nav-item"><a href="about.html">ABOUT</a>  </div>
+            <!-- <div class="nav-item">MORE</div> -->
+        </div>
+    </div>
+
+    <div id="page">
+        <div class="day-picker">
+            <div class="day-choice">
+                <div class="day-text">M</div>
+            </div>
+            <div class="day-choice">
+                <div class="day-text">T</div>
+            </div>
+            <div class="day-choice">
+                <div class="day-text">W</div>
+            </div>
+            <div class="day-choice">
+                <div class="day-text">T</div>
+            </div>
+            <div class="day-choice">
+                <div class="day-text">F</div>
+            </div>
+            <div class="day-choice">
+                <div class="day-text">S</div>
+            </div>
+            <div class="day-choice">
+                <div class="day-text">S</div>
+            </div>
+        </div>
+
+        <div id="actual-menu">
+            <div class="menu-category" id="B">
+                <div class="menu-category-inner">
+                    <header class="menu-category__header">
+                        <span class="meal-name">Breakfast</span>
+                        <span class="meal-timing">7:30AM - 9:10AM</span>
+                    </header>
+                    <div class="menu__items">
+                        <!-- Menu items will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        
+            <div class="menu-category" id="L">
+                <div class="menu-category-inner">
+                    <header class="menu-category__header">
+                        <span class="meal-name">Lunch</span>
+                        <span class="meal-timing">12PM - 2:00PM</span>
+                    </header>
+                    <div class="menu__items">
+                        <!-- Menu items will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        
+            <div class="menu-category" id="D">
+                <div class="menu-category-inner">
+                    <header class="menu-category__header">
+                        <span class="meal-name">Dinner</span>
+                        <span class="meal-timing">7:30PM - 9:30PM</span>
+                    </header>
+                    <div class="menu__items">
+                        <!-- Menu items will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="pwa-install-banner">
+            <div class="banner__content">
+                <img class="corner--top-right" src="/images/triforce-corner.png" alt="">
+                <img class="corner--top-left" src="/images/triforce-corner.png" alt="">
+                <img class="corner--bottom-right" src="/images/triforce-corner.png" alt="">
+                <img class="corner--bottom-left" src="/images/triforce-corner.png" alt="">
+                <header>Install the Web App</header>
+                <hr>
+                <hr>
+                <div id="pwa-install-instructions">Options (<b>⋮</b>) → Install App</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span style="opacity: 0.8; margin-bottom: 1.5em;">jiit-62/mess-menu</span>
+        <span>
+            <br>
+            made by&nbsp;<a href="https://wa.me/+918303881616?text=You are the 'GOD', and the mess menu app is AMAZING!. It helps me out a lot.">SHREY GUPTA</a>
+        </span>
+    </div>
+    
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+    </div>
+</body>
+</html>
+
+
+
